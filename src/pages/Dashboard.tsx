@@ -1,32 +1,24 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Outlet,
-  NavLink,
-  useLocation,
-  useNavigate
-} from "react-router-dom";
+// import React from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineHome } from "react-icons/hi";
 import { BsPersonGear, BsPersonPlus } from "react-icons/bs";
 import { BiLogIn } from "react-icons/bi";
 import NavCard from "../components/NavCard";
-import HomePage from "./HomePage";
-import AccountSettingsPage from "./AccountSettingsPage";
+
 import { useEffect } from "react";
 
-
-
 function Dashboard() {
-    const location = useLocation();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(location.pathname === "/Dashboard/" || location.pathname === "/Dashboard"){
-            navigate("/Dashboard/Home")
-        }
-    },[])
+  useEffect(() => {
+    if (
+      location.pathname === "/Dashboard/" ||
+      location.pathname === "/Dashboard"
+    ) {
+      navigate("/Dashboard/Home");
+    }
+  }, []);
 
   return (
     <div className=" h-screen grid grid-cols-12 ">
@@ -37,16 +29,20 @@ function Dashboard() {
         <nav>
           <ul>
             <li>
-                <NavCard to="/Dashboard/Home" card_title="Dashboard" icon={<HiOutlineHome />} />
+              <NavCard
+                to="/Dashboard/Home"
+                card_title="Dashboard"
+                icon={<HiOutlineHome />}
+              />
               {/* <NavLink className={({ isActive }: { isActive: boolean })=>isActive? " bg-green-400": "bg-violet-500"} to="/Dashboard/">
               </NavLink> */}
             </li>
             <li>
-                <NavCard
+              <NavCard
                 to="/Dashboard/AccountSettings"
-                  card_title="Account Settings"
-                  icon={<BsPersonGear />}
-                />
+                card_title="Account Settings"
+                icon={<BsPersonGear />}
+              />
               {/* <NavLink className={({ isActive }: { isActive: boolean })=>isActive? " bg-green-400": "bg-violet-500"} to="/Dashboard/AccountSettings">
               </NavLink> */}
             </li>
@@ -57,7 +53,11 @@ function Dashboard() {
               <NavCard to="/" card_title="Login" icon={<BiLogIn />} />
             </li>
             <li>
-              <NavCard to="/Dashboard/Register" card_title="Register" icon={<BsPersonPlus />} />
+              <NavCard
+                to="/Dashboard/Register"
+                card_title="Register"
+                icon={<BsPersonPlus />}
+              />
             </li>
           </ul>
         </nav>
