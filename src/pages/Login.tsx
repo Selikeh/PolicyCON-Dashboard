@@ -45,7 +45,7 @@ function Login() {
                 <div className=' text-slate-400 text-xs font-medium'>Or login with</div>
                 <div className=' flex justify-center gap-2'>
                     <div className=' p-2 bg-slate-100 rounded-3xl flex flex-row justify-center shadow-[0px_15px_30px_20px] shadow-[#b6b6b657] hover:cursor-pointer'><img className=' w-5 h-5' src="/facebook_logo.png" alt="" /></div>
-                    <div className=' p-2 bg-slate-100 rounded-3xl flex flex-row justify-center shadow-[0px_15px_30px_20px] shadow-[#b6b6b657] hover:cursor-pointer'><img className=' w-5 h-5' src="/public/google_brand_branding_logo_network_icon.png" alt="" /></div>
+                    <div className=' p-2 bg-slate-100 rounded-3xl flex flex-row justify-center shadow-[0px_15px_30px_20px] shadow-[#b6b6b657] hover:cursor-pointer'><img className=' w-5 h-5' src="/google_brand_branding_logo_network_icon.png" alt="" /></div>
                 </div>
                 <div className=' mt-[6vh] text-center text-slate-500 text-xs font-medium hover:cursor-pointer'>Sign Up</div>
             </div>
