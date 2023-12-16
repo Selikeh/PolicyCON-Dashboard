@@ -1,4 +1,3 @@
-import React from "react";
 import { IoSearch, IoCardOutline } from "react-icons/io5";
 import { TbBell } from "react-icons/tb";
 import { FaGithub, FaArrowUp, FaArrowDown } from "react-icons/fa";
@@ -23,9 +22,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import { CircularProgressbar,
-  CircularProgressbarWithChildren,
-  buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 // import AnimatedProgressProvider from "./AnimatedProgressProvider";
