@@ -194,10 +194,10 @@ export const data = {
 };
 
 
-function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateAction<boolean>>}): void {
+function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateAction<boolean>>}) {
   function handleMenuButtonClick():void{
     setShowMenu(true)
-  }
+  };
  
   return (
     <div className=" h-[140%] py-4 px-4 grid grid-rows-[12] gap-4">
