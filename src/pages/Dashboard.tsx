@@ -3,11 +3,12 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineHome } from "react-icons/hi";
 import { BsPersonGear, BsPersonPlus } from "react-icons/bs";
 import { BiLogIn } from "react-icons/bi";
+import { ImCross } from "react-icons/im";
 import NavCard from "../components/NavCard";
 
 import { useEffect } from "react";
 
-function Dashboard() {
+function Dashboard( { showMenu, setShowMenu } : {showMenu: boolean, setShowMenu: React.Dispatch<React.SetStateAction<boolean>>} ) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,10 +21,15 @@ function Dashboard() {
     }
   }, []);
 
+  function handleMenuHideClick():void{
+    setShowMenu(false)
+  }
+
   return (
     <div className=" h-screen grid grid-cols-12 ">
-      <div className=" px-4 col-span-2 h-screen bg-white">
-        <div>
+      <div className={ (showMenu?"":" -translate-x-full") +" fixed z-10 px-4 md:static md:block md:col-span-2 h-screen bg-white"}>
+        <div className=" relative">
+          <div className={(showMenu?"":" hidden") +" w-fit h-fit absolute -right-16 top-2 md:hidden"}><button onClick={handleMenuHideClick} className=" p-1 bg-red-400 text-2xl rounded-md "><ImCross /></button></div>
           <h2>sneat</h2>
         </div>
         <nav>
@@ -62,7 +68,7 @@ function Dashboard() {
           </ul>
         </nav>
       </div>
-      <div className="col-span-10 overflow-y-scroll bg-slate-200">
+      <div className=" col-span-12 md:col-span-10 overflow-y-scroll bg-slate-200">
         <Outlet />
         {/* <Routes>
                 <Route path='/' index element={<HomePage/>}/>
