@@ -187,7 +187,7 @@ export const data = {
 
 function HomePage() {
   return (
-    <div className=" h-[130%] pt-4 px-4 grid grid-rows-[12] gap-4">
+    <div className=" h-[140%] py-4 px-4 grid grid-rows-[12] gap-4">
       <div className=" row-span-1 px-2 py-3 bg-white rounded-md flex items-center justify-between">
         <div className=" w-2/3 flex items-center">
           <IoSearch />
@@ -214,7 +214,7 @@ function HomePage() {
             <br />
             Check your new raising badge in your profile
           </p>
-          <button className=" w-36 mt-4 py-1 rounded-md bg-indigo-600/20 text-sm text-indigo-400/80 font-semibold">
+          <button className=" w-36 mt-4 mb-2 py-1 rounded-md bg-indigo-600/20 text-sm text-indigo-400/80 font-semibold">
             View Badges
           </button>
         </div>
@@ -366,8 +366,8 @@ function HomePage() {
           
         </div>
       </div>
-      <div className=" row-span-5 grid grid-cols-6 gap-4">
-        <div className=" col-span-2 p-3 bg-white">
+      <div className=" row-span-5 pb-4 grid grid-cols-6 gap-4">
+        <div className=" col-span-2 p-3 rounded-md bg-white">
           <div className=" flex justify-between">
             <h3>Order Statistics</h3>
             <HiDotsVertical />
@@ -433,7 +433,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className=" col-span-2 p-3 bg-white">
+        <div className=" col-span-2 p-3 rounded-md bg-white">
           <div className=" flex justify-between">
             <h3>Order Statistics</h3>
             <HiDotsVertical />
@@ -499,7 +499,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className=" col-span-2 p-3 bg-white">
+        <div className=" col-span-2 p-3 rounded-md bg-white">
           <div className=" flex justify-between">
             <h3>Order Statistics</h3>
             <HiDotsVertical />
