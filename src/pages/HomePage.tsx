@@ -511,19 +511,11 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
         </div>
         <div className=" col-span-6 md:col-span-2 p-3 rounded-md bg-white">
           <div className=" flex justify-between">
-            <h3>Order Statistics</h3>
+            <h3>Transactions</h3>
             <HiDotsVertical />
           </div>
-          <h4>42.82k Total Sales</h4>
-          <div className=" flex justify-between">
-            <div>
-              <h3>8,258</h3>
-              <h5>Total Orders</h5>
-            </div>
-            <div className=" h-24 w-24">
-              <Doughnut options={donutOptions} data={donutData} />
-            </div>
-          </div>
+          
+          
           <div>
             <div className=" flex  justify-between">
               <div className="flex items-center">
@@ -531,11 +523,11 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
                   <SlScreenSmartphone className=" text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Electronic</h4>
-                  <h5 className=" text-xs">Mobile, Earbuds, TV</h5>
+                  <h6 className=" text-xs">Paypal</h6>
+                  <h5 className=" text-sm font-medium">Send money</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">82.5k</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+82.5 USD</h3>
             </div>
             <div className=" flex  justify-between">
               <div className="flex items-center">
@@ -543,11 +535,11 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
                   <SlScreenSmartphone className=" text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Fashion</h4>
-                  <h5 className=" text-xs">Tshirt, Jeans</h5>
+                  <h6 className=" text-xs">Wallet</h6>
+                  <h5 className=" text-sm font-medium">Mac'D</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">23.5k</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+275.23 USD</h3>
             </div>
             <div className=" flex  justify-between">
               <div className="flex items-center">
@@ -555,11 +547,11 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
                   <SlScreenSmartphone className=" text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Decor</h4>
-                  <h5 className=" text-xs">Dining</h5>
+                  <h6 className=" text-xs">Transfer</h6>
+                  <h5 className=" text-sm font-medium">Refund</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">865</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+865 USD</h3>
             </div>
             <div className=" flex  justify-between">
               <div className="flex items-center">
@@ -567,11 +559,35 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
                   <SlScreenSmartphone className=" text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Sports</h4>
-                  <h5 className=" text-xs">Football, Cricket Kit</h5>
+                  <h6 className=" text-xs">Credit</h6>
+                  <h5 className=" text-sm font-medium">Ordered Food</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">99</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+99 USD</h3>
+            </div>
+            <div className=" flex  justify-between">
+              <div className="flex items-center">
+                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
+                  <SlScreenSmartphone className=" text-indigo-500" />
+                </div>
+                <div>
+                  <h6 className=" text-xs">Wallet</h6>
+                  <h5 className=" text-sm font-medium">Starbucks</h5>
+                </div>
+              </div>
+              <h3 className=" text-sm text-slate-500 font-semibold">+290 USD</h3>
+            </div>
+            <div className=" flex  justify-between">
+              <div className="flex items-center">
+                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
+                  <SlScreenSmartphone className=" text-indigo-500" />
+                </div>
+                <div>
+                  <h6 className=" text-xs">Mastercard</h6>
+                  <h5 className=" text-sm font-medium">Ordered Food</h5>
+                </div>
+              </div>
+              <h3 className=" text-sm text-slate-500 font-semibold">+99.45 USD</h3>
             </div>
           </div>
         </div>
