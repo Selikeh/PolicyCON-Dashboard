@@ -3,12 +3,14 @@ import { TbBell } from "react-icons/tb";
 import { FaGithub, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { AiOutlinePieChart } from "react-icons/ai";
-import { HiDotsVertical } from "react-icons/hi";
+import { HiDotsVertical, HiOutlineHome } from "react-icons/hi";
 import { TbFolder } from "react-icons/tb";
 import { CgPaypal } from "react-icons/cg";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { BiWallet } from "react-icons/bi";
+import { BiWallet, BiFootball  } from "react-icons/bi";
 import { SlScreenSmartphone } from "react-icons/sl";
+import { PiCoatHanger } from "react-icons/pi";
+import { IoIosArrowUp } from "react-icons/io";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,6 +26,7 @@ import {
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import {
   CircularProgressbarWithChildren,
+  CircularProgressbar,
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -60,9 +63,9 @@ export const lineOptions = {
 
   aspectRatio: 1.5,
   plugins: {
-    // legend: {
-    //   position: 'top' as const,
-    // },
+    legend: {
+      position: 'top' as const,
+    },
     title: {
       display: false,
       text: "Chart.js Line Chart",
@@ -80,8 +83,8 @@ const lineLabels = [
   "July",
 ];
 
-export const lineData = {
-  lineLabels,
+export const lineData1 = {
+  labels: lineLabels,
   datasets: [
     {
       label: "Dataset 1",
@@ -92,11 +95,31 @@ export const lineData = {
     },
     // {
     //   label: 'Dataset 2',
-    //   data: [400, 100, 140, 200, 900, 800, 720],
+    //   data: [200, 300, 340, 210, 160, 220, 120],
     //   // labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
     //   borderColor: 'rgb(53, 162, 235)',
     //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
     // },
+  ],
+};
+
+export const lineData2 = {
+  labels: lineLabels,
+  datasets: [
+    // {
+    //   label: "Dataset 1",
+    //   data: [400, 100, 140, 200, 300, 200, 120],
+    //   // labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+    //   borderColor: "rgb(255, 218, 10)",
+    //   backgroundColor: "rgb(255, 218, 10)",
+    // },
+    {
+      label: 'Dataset 2',
+      data: [200, 300, 340, 210, 160, 220, 120],
+      // labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: 'rgb(53, 162, 235)',
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
   ],
 };
 
@@ -370,23 +393,24 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
                 <h3 className=" text-xl text-slate-500 font-medium">$12,628</h3>
               </div>
             </div>
-            <div className=" w-2/3 ">
-              <Line options={lineOptions} data={lineData} />
+            <div className=" w-2/3 h-full">
+              <Line options={lineOptions} data={lineData1} />
             </div>
           </div>
         </div>
       </div>
       <div className=" row-span-5 pb-4 grid grid-cols-6 gap-4">
+        
         <div className=" col-span-6 md:col-span-2 p-3 rounded-md bg-white">
           <div className=" flex justify-between">
-            <h3>Order Statistics</h3>
+            <h3 className=" text-xl font-medium text-slate-500">Order Statistics</h3>
             <HiDotsVertical />
           </div>
-          <h4>42.82k Total Sales</h4>
-          <div className=" flex justify-between">
+          <h4 className=" text-sm text-slate-400">42.82k Total Sales</h4>
+          <div className=" mt-3 flex justify-between">
             <div>
-              <h3>8,258</h3>
-              <h5>Total Orders</h5>
+              <h3 className=" text-2xl font-medium text-slate-500">8,258</h3>
+              <h5 className=" text-sm text-slate-400">Total Orders</h5>
             </div>
             <div className=" h-24 w-24">
               <Doughnut options={donutOptions} data={donutData} />
@@ -399,32 +423,32 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
                   <SlScreenSmartphone className=" text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Electronic</h4>
-                  <h5 className=" text-xs">Mobile, Earbuds, TV</h5>
+                  <h4 className=" text-sm text-slate-500 font-medium">Electronic</h4>
+                  <h5 className=" text-xs text-slate-400">Mobile, Earbuds, TV</h5>
                 </div>
               </div>
               <h3 className=" text-sm text-slate-500 font-semibold">82.5k</h3>
             </div>
             <div className=" flex  justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-2 bg-lime-300/50 rounded">
+                  <PiCoatHanger className=" text-lime-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Fashion</h4>
-                  <h5 className=" text-xs">Tshirt, Jeans</h5>
+                  <h4 className=" text-sm text-slate-500 font-medium">Fashion</h4>
+                  <h5 className=" text-xs text-slate-400">Tshirt, Jeans, Shoes</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">23.5k</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">23.8k</h3>
             </div>
             <div className=" flex  justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-2 bg-sky-300/50 rounded">
+                  <HiOutlineHome className=" text-sky-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Decor</h4>
-                  <h5 className=" text-xs">Dining</h5>
+                  <h4 className=" text-sm text-slate-500 font-medium">Decor</h4>
+                  <h5 className=" text-xs text-slate-400">Fine Art, Dining</h5>
                 </div>
               </div>
               <h3 className=" text-sm text-slate-500 font-semibold">865</h3>
@@ -432,11 +456,11 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
             <div className=" flex  justify-between">
               <div className="flex items-center">
                 <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                  <BiFootball  className=" text-indigo-500" />
                 </div>
                 <div>
-                  <h4 className=" text-sm font-medium">Sports</h4>
-                  <h5 className=" text-xs">Football, Cricket Kit</h5>
+                  <h4 className=" text-sm text-slate-500 font-medium">Sports</h4>
+                  <h5 className=" text-xs text-slate-400">Football, Cricket Kit</h5>
                 </div>
               </div>
               <h3 className=" text-sm text-slate-500 font-semibold">99</h3>
@@ -444,150 +468,123 @@ function HomePage({ setShowMenu } : {setShowMenu: React.Dispatch<React.SetStateA
           </div>
         </div>
         <div className=" col-span-6 md:col-span-2 p-3 rounded-md bg-white">
-          <div className=" flex justify-between">
-            <h3>Order Statistics</h3>
-            <HiDotsVertical />
+          <div className=" px-6 mb-2 flex justify-between">
+            <h3 className=" px-3 py-1 bg-indigo-600 rounded-md text-slate-200 font-semibold">INCOME</h3>
+            <h3>Expenses</h3>
+            <h3>Profit</h3>
+            
           </div>
-          <h4>42.82k Total Sales</h4>
-          <div className=" flex justify-between">
-            <div>
-              <h3>8,258</h3>
-              <h5>Total Orders</h5>
-            </div>
-            <div className=" h-24 w-24">
-              <Doughnut options={donutOptions} data={donutData} />
+          <div className=" pl-20">
+
+              <h5>Total Income</h5>
+            <div className=" flex ">
+              <h4 className=" text-xl text-slate-500 font-semibold">$459.1k</h4>
+              <div className=" ml-2 flex justify-center items-center gap-1 text-sm text-lime-400">
+                <IoIosArrowUp />
+                <div>65%</div>
+              </div>
             </div>
           </div>
-          <div>
-            <div className=" flex  justify-between">
-              <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+          <div className=" w-full min-h-[250px]">
+          <Line options={lineOptions} data={lineData2} />
+          </div>
+          <div className=" mb-4 mt-10 flex justify-center gap-4">
+            <div className=" w-14 h-14">
+              <CircularProgressbarWithChildren   value={66} styles={buildStyles({pathColor: "#5704dbde"})}>
+                {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                
+                <div className=" text-slate-400 font-medium">
+                  6.5k
                 </div>
-                <div>
-                  <h4 className=" text-sm font-medium">Electronic</h4>
-                  <h5 className=" text-xs">Mobile, Earbuds, TV</h5>
-                </div>
-              </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">82.5k</h3>
+              </CircularProgressbarWithChildren>
+
             </div>
-            <div className=" flex  justify-between">
-              <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
-                </div>
-                <div>
-                  <h4 className=" text-sm font-medium">Fashion</h4>
-                  <h5 className=" text-xs">Tshirt, Jeans</h5>
-                </div>
-              </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">23.5k</h3>
-            </div>
-            <div className=" flex  justify-between">
-              <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
-                </div>
-                <div>
-                  <h4 className=" text-sm font-medium">Decor</h4>
-                  <h5 className=" text-xs">Dining</h5>
-                </div>
-              </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">865</h3>
-            </div>
-            <div className=" flex  justify-between">
-              <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
-                </div>
-                <div>
-                  <h4 className=" text-sm font-medium">Sports</h4>
-                  <h5 className=" text-xs">Football, Cricket Kit</h5>
-                </div>
-              </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">99</h3>
-            </div>
+           {/* <CircularProgressbar value={65} text="65k" className=" h-16 w-16 text-green-600"  strokeWidth={10}/> */}
+                  <div className=" flex flex-col justify-center">
+                    <h3 className="text-lg text-slate-500 font-medium">Income this week</h3>
+                    <h4 className=" text-sm text-slate-400">$39k less than last week</h4>
+                  </div>
           </div>
         </div>
-        <div className=" col-span-6 md:col-span-2 p-3 rounded-md bg-white">
-          <div className=" flex justify-between">
-            <h3>Transactions</h3>
+        <div className=" col-span-6 md:col-span-2 p-3 flex flex-col rounded-md bg-white">
+          <div className=" mb-4 flex justify-between">
+            <h3 className=" text-xl font-medium text-slate-500">Transactions</h3>
             <HiDotsVertical />
           </div>
           
           
-          <div>
-            <div className=" flex  justify-between">
+          <div className=" flex-grow">
+            <div className=" my-3 flex justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-4 bg-red-300/30 rounded">
+                  
                 </div>
                 <div>
-                  <h6 className=" text-xs">Paypal</h6>
-                  <h5 className=" text-sm font-medium">Send money</h5>
+                  <h6 className=" text-xs text-slate-400">Paypal</h6>
+                  <h5 className=" text-sm text-slate-500 font-medium">Send money</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">+82.5 USD</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+82.5 <span className="text-slate-400 font-medium">USD</span></h3>
             </div>
-            <div className=" flex  justify-between">
+            <div className=" my-3 flex justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-4 bg-indigo-300/30 rounded">
+                  
                 </div>
                 <div>
-                  <h6 className=" text-xs">Wallet</h6>
-                  <h5 className=" text-sm font-medium">Mac'D</h5>
+                  <h6 className=" text-xs text-slate-400">Wallet</h6>
+                  <h5 className=" text-sm text-slate-500 font-medium">Mac'D</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">+275.23 USD</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+275.23 <span className="text-slate-400 font-medium">USD</span></h3>
             </div>
-            <div className=" flex  justify-between">
+            <div className=" my-3 flex justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-4 bg-sky-300/30 rounded">
+                  
                 </div>
                 <div>
-                  <h6 className=" text-xs">Transfer</h6>
-                  <h5 className=" text-sm font-medium">Refund</h5>
+                  <h6 className=" text-xs text-slate-400">Transfer</h6>
+                  <h5 className=" text-sm text-slate-500 font-medium">Refund</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">+865 USD</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+865 <span className="text-slate-400 font-medium">USD</span></h3>
             </div>
-            <div className=" flex  justify-between">
+            <div className=" my-3 flex justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-4 bg-lime-300/30 rounded">
+                  
                 </div>
                 <div>
-                  <h6 className=" text-xs">Credit</h6>
-                  <h5 className=" text-sm font-medium">Ordered Food</h5>
+                  <h6 className=" text-xs text-slate-400">Credit</h6>
+                  <h5 className=" text-sm text-slate-500 font-medium">Ordered Food</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">+99 USD</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+99 <span className="text-slate-400 font-medium">USD</span></h3>
             </div>
-            <div className=" flex  justify-between">
+            <div className=" my-3 flex justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-4 bg-indigo-300/30 rounded">
+                  
                 </div>
                 <div>
-                  <h6 className=" text-xs">Wallet</h6>
-                  <h5 className=" text-sm font-medium">Starbucks</h5>
+                  <h6 className=" text-xs text-slate-400">Wallet</h6>
+                  <h5 className=" text-sm text-slate-500 font-medium">Starbucks</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">+290 USD</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+290 <span className="text-slate-400 font-medium">USD</span></h3>
             </div>
-            <div className=" flex  justify-between">
+            <div className=" my-3 flex justify-between">
               <div className="flex items-center">
-                <div className=" mr-1 p-2 bg-indigo-300/50 rounded">
-                  <SlScreenSmartphone className=" text-indigo-500" />
+                <div className=" mr-1 p-4 bg-orange-300/30 rounded">
+                  
                 </div>
                 <div>
-                  <h6 className=" text-xs">Mastercard</h6>
-                  <h5 className=" text-sm font-medium">Ordered Food</h5>
+                  <h6 className=" text-xs text-slate-400">Mastercard</h6>
+                  <h5 className=" text-sm text-slate-500 font-medium">Ordered Food</h5>
                 </div>
               </div>
-              <h3 className=" text-sm text-slate-500 font-semibold">+99.45 USD</h3>
+              <h3 className=" text-sm text-slate-500 font-semibold">+99.45 <span className="text-slate-400 font-medium">USD</span></h3>
             </div>
           </div>
         </div>

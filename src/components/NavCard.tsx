@@ -13,9 +13,9 @@ function NavCard({ card_title, to, icon }: NavCardProps) {
       to={to}
       className={({ isActive }: { isActive: boolean }) =>
         (isActive
-          ? " bg-indigo-600/40 text-indigo-700 r"
+          ? " bg-indigo-600/30 text-indigo-700 r"
           : " bg-none text-slate-500 ") +
-        " h-10 mt-4 px-2 rounded-md text-center flex items-center justify-start hover:bg-slate-400 hover:cursor-pointer"
+        " h-10 mt-4 px-2 rounded-md text-center flex items-center justify-start hover:bg-slate-200 hover:cursor-pointer"
       }
     >
       {icon ? icon : ""}{" "}

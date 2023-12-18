@@ -28,9 +28,10 @@ function Dashboard( { showMenu, setShowMenu } : {showMenu: boolean, setShowMenu:
   return (
     <div className=" h-screen grid grid-cols-12 ">
       <div className={ (showMenu?"":" -translate-x-full") +" fixed z-10 px-4 md:translate-x-0 md:static md:block md:col-span-2 h-screen bg-white"}>
-        <div className=" relative">
+        <div className=" relative flex items-center">
           <div className={(showMenu?"":" hidden") +" w-fit h-fit absolute -right-16 top-2 md:hidden"}><button onClick={handleMenuHideClick} className=" p-1 bg-red-400 text-2xl rounded-md "><ImCross /></button></div>
-          <h2>sneat</h2>
+          <img className=" w-20 h-20" src="/dashboard_logo.png" alt="" />
+          <h2 className=" text-3xl text-slate-700 font-extrabold">sneat</h2>
         </div>
         <nav>
           <ul>
@@ -53,7 +54,7 @@ function Dashboard( { showMenu, setShowMenu } : {showMenu: boolean, setShowMenu:
               </NavLink> */}
             </li>
           </ul>
-          <div>PAGES</div>
+          <div className=" ml-2 mt-3 text-sm text-slate-300">PAGES</div>
           <ul>
             <li>
               <NavCard to="/" card_title="Login" icon={<BiLogIn />} />
